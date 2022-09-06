@@ -23,6 +23,7 @@ The bot initalizes historical data from 1 Jul, 2020 to 4 Sep, 2022 and a logisti
 ### Binance Guide
 
 For Testnet, please follow this [guide](https://www.binance.com/en/support/faq/ab78f9a1b8824cf0a106b4229c76496d)
+
 For Mainnet, please follow this [guide](https://www.binance.com/en/support/faq/360002502072)
 
 If you do not have a binance account, please consider registering with the link below.
