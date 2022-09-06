@@ -72,7 +72,7 @@ Open config.py.
 
 ![UI](./img/execute.png)
 
-
+Note: Depending on which interval you select, the time of "Appending Historical Data" might differ. Give the process some time as the datasets are huge.
 
 ### Donation
 ---
