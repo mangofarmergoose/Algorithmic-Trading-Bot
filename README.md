@@ -50,6 +50,7 @@ pip3 install numpy
 pip3 install pandas
 pip3 install sklearn
 
+python3 bot.py #To run the bot
 ```
 For talib and python-binance, please follow the original documentations linked above.
 Installing these libraries should be trivial regardless of platforms.
