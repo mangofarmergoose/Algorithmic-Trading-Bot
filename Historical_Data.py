@@ -47,7 +47,7 @@ class HistoricalData:
 
 
     def SetKLineData(self):
-        test = client_query.get_historical_klines(symbol=self.symbol, interval=self.interval ,start_str="1 Jul, 2020", end_str="4 Sep, 2022")
+        test = client_query.get_historical_klines(symbol=self.symbol, interval=self.interval ,start_str="1 Jul, 2020")
         self.arr = np.array(test, dtype="d")
         
     def InitAllHistoricalData(self):
