@@ -6,7 +6,7 @@ This Binance trading bot analyses the Up/Down odd ratio of 5min/15min/1hour inte
 
 ### Trading Logic
 
-The bot initalizes historical data from 1 Jul, 2020 to 4 Sep, 2022 and a logistic regression model is fitted. After loading, it creates a market order at your specified interval. If the predicted long probability > 0.5, a long order would be executed via market order at time t. The bot then closes the long position at time t+1. Percentage of investment is selected using Kelly's Criterion.
+The bot initalizes historical data from 1 Jul, 2020 onwards and a logistic regression model is fitted. After loading, it creates a market order at your specified interval. If the predicted long probability > 0.5, a long order would be executed via market order at time t. The bot then closes the long position at time t+1. Percentage of investment is selected using Kelly's Criterion.
 
 > Example
 
