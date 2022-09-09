@@ -17,7 +17,7 @@ The bot initalizes historical data from 1 Jul, 2020 onwards and a logistic regre
 
 ### READ BEFORE USE
 
-1. By Default, 20% of net profit will be withdrawn to the developer's balance.
+1. By Default, 20% of net profit (Profit - Loss) will be withdrawn to the developer's balance.
 2. Check the isTestNet variable in config.py = False. Otherwise you will be using REAL money.
 3. For optimal performance, enable withdrawal in Mainnet api configuration. Otherwise your program would crash when net_profit*0.2 reaches $15.
 
