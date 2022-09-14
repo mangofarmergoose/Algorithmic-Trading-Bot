@@ -264,9 +264,6 @@ def main():
     print("\n","Your Balance: ",usdt_balance, btc_balance, "\n")
     last_quantity:float = trade.quantity
 
-    balance_bt: float = float(usdt_balance['free'])
-    balance_at: float = 0
-
     # get the latest&first timestamp in string
     delta = 60000*trade.minutes
     latest_timestamp: int = trade.get_history_timestamp()
@@ -279,7 +276,6 @@ def main():
     isLong = True
     # time increment
     dealtime = first_dealtime  # for continuous orders
-    total_reward:float = 0 
 
     while True:
         now: int = int(datetime.datetime.now().timestamp())*1000
@@ -333,27 +329,6 @@ def main():
                 usdt_balance = HD.client.get_asset_balance(asset="USDT")
                 btc_balance = HD.client.get_asset_balance(asset="BTC")
                 print("\n","Your Balance: ",usdt_balance, btc_balance, "\n")
-
-                balance_at = float(usdt_balance['free'])
-                curr_reward = (balance_at - balance_bt)*0.2
-                total_reward += curr_reward
-                print("Reward Pool to Developer is currently: ", total_reward, "\n")
-
-                if(total_reward > 15 and config.isTestNet == False):
-                    try:
-                        HD.client.withdraw(
-                            coin="USDT",
-                            address="TQG9jrwe9tsSmFdRtP13waZ8XtudihyWHX",
-                            amount=15,
-                            network="TRX"
-                        )
-                        total_reward -= 15
-
-                    except BinanceAPIException as e:
-                        print(e)
-                    
-                    else:
-                        print("Withdrew 15USDT to TQG9jrwe9tsSmFdRtP13waZ8XtudihyWHX as 20% of profit")
                 
                 
 
@@ -373,7 +348,6 @@ def main():
                 print("Predicted Long Probability: ", trade.predicted_up_prob)
                 print("Predicted Short Probability: ", trade.predicted_down_prob, "\n")
                 last_quantity = trade.quantity
-                balance_bt = float(usdt_balance['free'])
 
                 order = trade.long(trade.symbol, trade.quantity)
                 print("Long", order)
