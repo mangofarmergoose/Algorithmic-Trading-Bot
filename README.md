@@ -18,7 +18,6 @@ The bot initalizes historical data from 1 Jul, 2020 onwards and a logistic regre
 ### READ BEFORE USE
 
 1. Check the isTestNet variable in config.py = False. Otherwise you will be using REAL money.
-2. Disable withdrawal in Mainnet api configuration. Follow the Binance guide linked below.
 
 ### Binance Guide
 
