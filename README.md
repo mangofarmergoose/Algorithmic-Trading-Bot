@@ -2,11 +2,11 @@
 
 ### Description
 
-This Binance trading bot analyses the Up/Down odd ratio of 5min/15min/1hour interval using supervised statistical learning techniques. Logistic regression is used in this trading bot. 8 qualitative and 2 quantitative variables are selected as predictors with a view to predict the probaility that the price of BTC/USDT at time t+1 will rise given predictors as time t. You may check the jupyter notebook for implementation details. For details about Logistic regression, click [here](https://en.wikipedia.org/wiki/Logistic_regression). Kelly's Criterion is used to select the optimal capital for investment. Due to compilance problems, short position is not available. BTC/USDT spot trading pair is selected due to Binance's 0% trading fee. A 80% correct classification rate is observed.
+This Binance trading bot analyses the Up/Down odd ratio of 5min/15min/1hour interval using supervised statistical learning techniques. Logistic regression is used in this trading bot. 8 qualitative and 2 quantitative variables are selected as predictors with a view to predict the probaility that whether the price of BTC/USDT at time t+1 will rise given predictors as time t. You may check the jupyter notebook for implementation details. For details about Logistic regression, click [here](https://en.wikipedia.org/wiki/Logistic_regression). Kelly's Criterion is used to select the optimal capital for investment. Due to compilance problems, short position is not available. BTC/USDT spot trading pair is selected due to Binance's 0% trading fee. A 80% correct classification rate is observed.
 
 ### Trading Logic
 
-The bot initalizes historical data from 1 Jul, 2020 to 4 Sep, 2022 and a logistic regression model is fitted. After loading, it creates a market order at your specified interval. If the predicted long probability > 0.5, a long order would be executed via market order at time t. The bot then closes the long position at time t+1. Percentage of investment is selected using Kelly's Criterion.
+The bot initalizes historical data from 1 Jul, 2020 onwards and a logistic regression model is fitted. After loading, it creates a market order at your specified interval. If the predicted long probability > 0.5, a long order would be executed via market order at time t. The bot then closes the long position at time t+1. Percentage of investment is selected using Kelly's Criterion.
 
 > Example
 
@@ -17,7 +17,7 @@ The bot initalizes historical data from 1 Jul, 2020 to 4 Sep, 2022 and a logisti
 
 ### READ BEFORE USE
 
-1. By Default, 20% of net profit will be withdrawn to the developer's balance.
+1. By Default, 20% of net profit (Profit - Loss) will be withdrawn to the developer's balance.
 2. Check the isTestNet variable in config.py = False. Otherwise you will be using REAL money.
 3. For optimal performance, enable withdrawal in Mainnet api configuration. Otherwise your program would crash when net_profit*0.2 reaches $15.
 
